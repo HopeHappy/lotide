@@ -1,3 +1,4 @@
+// Test function
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
@@ -6,6 +7,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+// Function that takes in a sentence and returns a count of each of the letters in the sentence
 const countLetters = function(str) {
   const results = {};
   const strWithouSpace = str.split(' ').join('');
@@ -21,6 +23,7 @@ const countLetters = function(str) {
   return results;
 };
 
+// Test code
 const results = countLetters('lighthouse in the house');
 assertEqual(results.l, 1);
 assertEqual(results.i, 2);
