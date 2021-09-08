@@ -46,7 +46,7 @@ const eqObjects = function(object1, object2) {
       }
     // When both values are objects
     } else if ((isObj1 && !isArr1) && (isObj2 && !isArr2)) {
-      if (!eqObjects(object1[key], object2[key])) {
+      if (!eqObjects(object1[key], object2[key])) { // use recursion
         return false;
       }
     // When one or both values are primitive data
@@ -85,3 +85,27 @@ assertEqual(eqObjects(ef, fe), true);
 const gh = { g: "1", h: {three: 4} };
 const hg = { h: {three: 3}, g: "1" };
 assertEqual(eqObjects(gh, hg), false);
+
+const object1 = { a: { z: 1 }, b: 2 };
+const object2 = { a: { z: 1 }, b: 2 };
+assertEqual(eqObjects(object1, object2), true); // => true
+
+const object3 = { a: { y: 0, z: 1 }, b: 2 };
+const object4 = { a: { z: 1 }, b: 2 };
+assertEqual(eqObjects(object3, object4), false); // => false
+
+const object5 = { a: { y: 0, z: 1 }, b: 2 };
+const object6 = { a: 1, b: 2 };
+assertEqual(eqObjects(object5, object6), false); // => false
+
+const object7 = { a: { x: { y: 2, z: 0 }, w: 1 }, b: { c: 2, d: 3 } };
+const object8 = { a: { x: { y: 2, z: 0 }, w: 1 }, b: { c: 2, d: 3 } };
+assertEqual(eqObjects(object7, object8), true); // => true
+
+const object9 = { a: { x: { y: 2, z: 0 }, w: 1}, b: { c: 2, d: 3 } };
+const object10 = { a: { x: { y: 2, z: 0 }, w: 1, v: 0 }, b: { c: 2, d: 3 } };
+assertEqual(eqObjects(object9, object10), false); // => false
+
+const object11 = { a: { x: { y: 2, z: 0 }, w: 1 }, b: { c: 2, d: 3 } };
+const object12 = { a: { x: { y: 2, z: 1 }, w: 1 }, b: { c: 2, d: 3 } };
+assertEqual(eqObjects(object11, object12), false); // => false
