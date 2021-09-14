@@ -1,12 +1,3 @@
-// Test function
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 // Helper function
 const eqObjects = function(object1, object2) {
   const key1 = Object.keys(object1);
@@ -82,14 +73,4 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-// Test code
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
-assertEqual(eqArrays([], []), true);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
-assertEqual(eqArrays([2, [3, [4, 5, {six: 6, seven: [7, 8]},]]], [2, [3, [4, 5, {six: 6, seven: [7, 8]}]]]), true);
-assertEqual(eqArrays([2, [3, [4, 5, {six: 6, seven: [7, 8]},]]], [2, [3, [4, 5, {six: 6, seven: [7]}]]]), false);
+module.exports = eqArrays;
