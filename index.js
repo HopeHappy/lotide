@@ -14,18 +14,18 @@ const takeUntil = require('./takeUntil');
 const findKey = require('./findKey');
 
 module.exports = {
-  head: head,
-  tail: tail,
-  eqArrays: eqArrays,
-  without: without,
-  flatten: flatten,
-  middle: middle,
-  countOnly: countOnly,
-  countLetters: countLetters,
-  letterPositions: letterPositions,
-  findKeyByValue: findKeyByValue,
-  eqObjects: eqObjects,
-  map: map,
-  takeUntil: takeUntil,
-  findKey: findKey
+  head,
+  tail,
+  eqArrays,
+  without,
+  flatten,
+  middle,
+  countOnly,
+  countLetters,
+  letterPositions,
+  findKeyByValue,
+  eqObjects,
+  map,
+  takeUntil,
+  findKey
 };
