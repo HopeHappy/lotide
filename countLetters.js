@@ -23,6 +23,8 @@ const countLetters = function(str) {
   return results;
 };
 
+module.exports = countLetters;
+
 // Test code
 const results = countLetters('lighthouse in the house');
 assertEqual(results.l, 1);

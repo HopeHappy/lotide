@@ -28,6 +28,8 @@ const map = function(arr, cb) {
   return results;
 };
 
+module.exports = map;
+
 // Test code
 const words = ["ground", "control", "to", "major", "tom"];
 const results1 = map(words, word => word[0]);

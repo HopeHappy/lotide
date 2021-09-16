@@ -13,6 +13,8 @@ const countOnly = function(allItems, itemsToCount) {
   return result;
 };
 
+module.exports = countOnly;
+
 // Test function
 const assertEqual = function(actual, expected) {
   if (actual === expected) {

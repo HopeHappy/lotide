@@ -28,6 +28,7 @@ const without = function(source, itemsToRemove) {
   return result;
 };
 
+module.exports = without;
 // const without = function(source, itemsToRemove) {
 //   return source.filter(element => itemsToRemove.indexOf(element) === -1);
 // };
